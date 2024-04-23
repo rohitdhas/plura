@@ -5,9 +5,17 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "mybenchmarktool",
+	Use:   "plura",
 	Short: "A powerful HTTP benchmarking tool",
-	Long:  `A CLI tool to benchmark HTTP endpoints.`,
+	Long: `
+	_____  _                
+	|  __ \| |
+	| |__) | |_   _ _ __ __ _
+	|  ___/| | | | | '__/ _  |
+	| |    | | |_| | | | (_| |
+	|_|    |_|\__,_|_|  \__,_|
+							   
+	A CLI tool to benchmark HTTP endpoints. 🚀`,
 }
 
 func Execute() error {
