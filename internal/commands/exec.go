@@ -6,24 +6,23 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var url string
-var method string
-var body string
+var inputUrl string
+var numRequests int
+var concurrency int
 
 var benchmarkCmd = &cobra.Command{
 	Use:   "exec",
 	Short: "Run HTTP benchmark",
 	Long:  `Run benchmark against a specified URL.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// Execute benchmark with provided parameters
-		fmt.Printf("Running benchmark for URL: %s, Method: %s, Body: %s\n", url, method, body)
-		// Call benchmarking function with provided parameters
+		fmt.Printf("⚙️ Running benchmark for URL: %s \n✅ Number of Requests: %d \n⌛️ Concurrency: %d\n", inputUrl, numRequests, concurrency)
+		runBenchmark(inputUrl, numRequests, concurrency)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(benchmarkCmd)
-	benchmarkCmd.Flags().StringVarP(&url, "url", "u", "", "URL to benchmark")
-	benchmarkCmd.Flags().StringVarP(&method, "method", "m", "GET", "HTTP method (GET, POST, PUT, etc.)")
-	benchmarkCmd.Flags().StringVarP(&body, "body", "b", "", "Request body")
+	benchmarkCmd.Flags().StringVarP(&inputUrl, "url", "u", "", "URL to benchmark")
+	benchmarkCmd.Flags().IntVarP(&numRequests, "requests", "r", 100, "Number of requests to make")
+	benchmarkCmd.Flags().IntVarP(&concurrency, "concurrency", "c", 10, "Concurrency level (number of concurrent requests)")
 }
