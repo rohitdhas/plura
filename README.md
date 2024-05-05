@@ -23,7 +23,7 @@ plura exec --url <URL> --requests <numRequests> --concurrency <concurrencyLevel>
 Example:
 
 ```bash
-plura benchmark --url http://example.com/api --requests 1000 --concurrency 10
+plura exec --url http://example.com/api --requests 1000 --concurrency 10
 ```
 
 ## Benchmarking with YAML File (WIP)
