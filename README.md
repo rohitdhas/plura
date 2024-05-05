@@ -7,7 +7,7 @@ Plura is a powerful HTTP benchmarking tool built with Go and Cobra, designed to 
 Ensure you have Go installed on your machine. Then, you can install the HTTP Benchmarking Tool by running:
 
 ```bash
-go get -u github.com/rohitdhas/plura
+go install github.com/rohitdhas/plura@latest
 ```
 
 ## 👨🏻‍💻 Usage
