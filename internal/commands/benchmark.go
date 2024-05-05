@@ -22,6 +22,7 @@ func runBenchmark(url string, numRequests, concurrency int) {
 
 	// Create new progress bar
 	bar := pb.StartNew(numRequests)
+	bar.SetWidth(70)
 
 	// Create workers
 	for i := 0; i < concurrency; i++ {
@@ -44,8 +45,8 @@ func runBenchmark(url string, numRequests, concurrency int) {
 	elapsed := time.Since(start)
 
 	// Display benchmark results
-	fmt.Printf("🎉 Benchmark completed in %v\n", elapsed)
-	fmt.Printf("💡 Requests per second: %.2f\n", float64(numRequests)/elapsed.Seconds())
+	fmt.Printf("\n\t🎉 Benchmark completed in %v\n", elapsed)
+	fmt.Printf("\n\t💡 Requests per second: %.2f\n\n", float64(numRequests)/elapsed.Seconds())
 }
 
 func makeRequest(client *http.Client, url string, complete chan struct{}, bar *pb.ProgressBar) {

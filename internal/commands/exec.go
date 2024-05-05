@@ -15,7 +15,7 @@ var benchmarkCmd = &cobra.Command{
 	Short: "Run HTTP benchmark",
 	Long:  `Run benchmark against a specified URL.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("⚙️ Running benchmark for URL: %s \n✅ Number of Requests: %d \n⌛️ Concurrency: %d\n", inputUrl, numRequests, concurrency)
+		fmt.Printf("\n\t⌛️ Running benchmark for URL: %s \n\n\t✅ Number of Requests: %d \n\n\t🎈 Concurrency: %d\n\n\t", inputUrl, numRequests, concurrency)
 		runBenchmark(inputUrl, numRequests, concurrency)
 	},
 }
